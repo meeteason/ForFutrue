@@ -2,6 +2,14 @@
 
 var ForFuture = function () {
     LocalContractStorage.defineProperty(this, "Owner");
+    LocalContractStorage.defineProperty(this, "Count",{
+        stringify: function (obj) {
+            return obj.toString();
+        },
+        parse: function (str) {
+            return parseInt(str);
+        }
+    });
     LocalContractStorage.defineMapProperty(this, "Content", {
         stringify: function (obj) {
             return JSON.stringify(obj);
@@ -15,6 +23,7 @@ var ForFuture = function () {
 ForFuture.prototype = {
     init: function () {
         this.Owner = Blockchain.transaction.from;
+        this.Count = 0;
     },
     _isOwner: function () {
         return this.Owner === Blockchain.transaction.from ? true : false;
@@ -49,6 +58,7 @@ ForFuture.prototype = {
                 text: str,
                 expire: calculateExpire
             })
+            this.Count +=1;
         } else {
             if (!!cover) {
                 this.Content.put(fromAddress, {
@@ -91,6 +101,9 @@ ForFuture.prototype = {
     },
     getDate:function(){
         return Date.now();
+    },
+    getCount:function(){
+        return this.Count;
     }
 }
 module.exports = ForFuture;
