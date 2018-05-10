@@ -71,7 +71,7 @@ $(function () {
 
     var yourAddress = localStorage.getItem("yourAddress")
     if (!!yourAddress) {
-        getYours(yourAddress)
+        // getYours(yourAddress)
         $("#txtAddress").val(yourAddress)
     }
 })
@@ -88,7 +88,7 @@ function showYourCentent(data) {
         //设置倒计时
         $(".count_down").countDown({
             startTimeStr: dayjs().format("YYYY/MM/DD HH:mm:ss"), //开始时间
-            endTimeStr: dayjs(data.expire).format("YYYY/MM/DD HH:mm:ss"), //结束时间
+            endTimeStr: dayjs(parseInt(data.expire)).format("YYYY/MM/DD HH:mm:ss"), //结束时间
             daySelector: ".day_num",
             hourSelector: ".hour_num",
             minSelector: ".min_num",

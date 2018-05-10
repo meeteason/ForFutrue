@@ -51,8 +51,8 @@
               },
               afterAction:function(options){
                 //父容器显示，特定文字
-                $(options.daySelector).parent().html("");
-                // $(options.daySelector).parent().hide();
+                // $(options.daySelector).parent().html("");
+                $(options.daySelector).parent().hide();
 
               }
                    
