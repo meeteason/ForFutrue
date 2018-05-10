@@ -20,15 +20,6 @@ var dapp_address = "n1xXUSQdCYvP6USG26JrSQo7rM85fSSoC9U";
 
 $(function () {
 
-
-    //设置时间选择器
-    $('#txtExpire').datepicker({
-        format: "yyyy-mm-dd 23:59:59",
-        language: "zh-CN",
-        clearBtn: true,
-        todayHighlight: true,
-        startDate: dayjs().format("YYYY-MM-DD")
-    });
     //提交写入
     $("#saveWrite").click(function () {
         var date = dayjs($('#txtExpire').val())
@@ -81,6 +72,7 @@ $(function () {
     var yourAddress = localStorage.getItem("yourAddress")
     if (!!yourAddress) {
         getYours(yourAddress)
+        $("#txtAddress").val(yourAddress)
     }
 })
 
@@ -92,6 +84,7 @@ function showYourCentent(data) {
     } else if (data.status == -1) {
         console.log("未写入任何信息")
     } else if (data.status == -2) {
+        console.log(dayjs().format("YYYY/MM/DD HH:mm:ss"), dayjs(parseInt(data.expire)).format("YYYY/MM/DD HH:mm:ss"))
         //设置倒计时
         $(".count_down").countDown({
             startTimeStr: dayjs().format("YYYY/MM/DD HH:mm:ss"), //开始时间
