@@ -19,7 +19,7 @@ var dapp_address = "n1xXUSQdCYvP6USG26JrSQo7rM85fSSoC9U";
 
 
 $(function () {
-
+    
 //   write("sdfadf", 5000, true, function (data) {
 //     if (data.code == 0) {
 
@@ -153,4 +153,12 @@ function write(content, expire, cover, callback) {
   }
 
 
+}
+
+
+function showLoading(){
+    $("#modalLoading").modal("show")
+}
+function showLoading(){
+    $("#modalLoading").modal("hide")
 }

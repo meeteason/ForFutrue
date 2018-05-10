@@ -10,11 +10,15 @@ body {
   /* background-color: #161616 */
 }
 #canvasNebulas{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 0;
 }
-
+.container-fluid{
+    position: relative;
+    z-index: 888;
+}
 .center-block{
-    margin-top: 30%;
+    padding-top: 30%;
 }

@@ -13,30 +13,94 @@
   <canvas id="canvasNebulas"></canvas>
 
   <div class="container-fluid">
-      <div class="center-block">
-        <p class="text-center"></p>
-          <div class="btn-group dropup">
-              <button type="button" class="btn btn-default">Dropup</button>
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="caret"></span>
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <ul class="dropdown-menu">
-                <!-- Dropdown menu links -->
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-              </ul>
-            </div>
+    <div class="center-block">
+      <h1 class="text-center">sdjfdj..adfsd</h1>
+      <p class="text-center mt-4">
+        <button type="button" class="btn btn-secondary btn-lg mt-3" data-toggle="modal" data-target="#modalWrite">Secondary</button>
+        <button type="button" class="btn btn-secondary btn-lg ml-3 mr-3 mt-3">Secondary</button>
+        <button type="button" class="btn btn-secondary btn-lg mt-3" data-toggle="modal" data-target="#modalFind">Secondary</button>
+      </p>
+
+    </div>
+  </div>
+  <!-- Modal Write-->
+  <div class="modal fade" id="modalWrite" tabindex="-1" role="dialog" aria-labelledby="modalWriteTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalWriteTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="txtExpire">Email address</label>
+            <input type="text" id="txtExpire" class="form-control" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="txtContent">textarea</label>
+            <textarea class="form-control" id="txtContent" rows="5"></textarea>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
       </div>
+    </div>
+  </div>
+  <!-- Modal Find-->
+  <div class="modal fade" id="modalFind" tabindex="-1" role="dialog" aria-labelledby="modalFindTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalFindTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="txtExpire">Email address</label>
+            <input type="text" id="txtExpire" class="form-control" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Loading-->
+  <div class="modal fade" id="modalLoading" tabindex="-1" data-backdrop="static" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+              aria-valuemax="100" style="width: 100%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="static/js/nebulas.min.js"></script>
   <script src="static/js/nebPay.js"></script>
   <script src="static/js/jquery-3.3.1.min.js"></script>
   <script src="static/bootstrap4/js/bootstrap.bundle.min.js"></script>
-  <script src="static/js/main.js"></script>
   <script src="static/js/Nebulas.js"></script>
-  <!-- built files will be auto injected -->
+  <script src="https://unpkg.com/dayjs"></script>
+
+  <script src="static/js/main.js"></script>
+
 </body>
 
 </html>
