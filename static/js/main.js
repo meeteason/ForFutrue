@@ -20,12 +20,6 @@ var dapp_address = "n1xXUSQdCYvP6USG26JrSQo7rM85fSSoC9U";
 
 $(function () {
 
-
-  // $('body').particleground({
-  //     dotColor: '#E8DFE8',
-  //     lineColor: '#133b88'
-  // });
-
 //   write("sdfadf", 5000, true, function (data) {
 //     if (data.code == 0) {
 
