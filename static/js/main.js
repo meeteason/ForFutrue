@@ -33,7 +33,7 @@ $(function () {
     $("#saveWrite").click(function () {
         var date = dayjs($('#txtExpire').val())
         if (date.isValid()) {
-            var expire = date.diff(dayjs)
+            var expire = date.diff(dayjs())
             if (expire > 0) {
                 var cover = $("#coverData").prop("checked")
                 showLoading();
