@@ -19,11 +19,11 @@ body {
 .container {
     position: relative;
     z-index: 888;
-    max-width: 768px;
+    /* max-width: 768px; */
 }
 
 .center-block {
-    padding-top: 30%;
+    /* padding-top: 30%; */
 }
 
 .container .count_down {
@@ -31,6 +31,6 @@ body {
     font-size: 1.5rem;
 }
 
-.container h1 {
+.container h2 {
     color: aliceblue
 }

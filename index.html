@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>forfutrue</title>
+  <title>写一封信给未来--星云链DAPP</title>
   <link rel="stylesheet" href="static/bootstrap4/css/bootstrap.min.css">
   <link rel="stylesheet" href="static/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="static/css/style.css">
@@ -15,29 +15,33 @@
 
   <div class="container">
     <div class="center-block">
-      <h1 class="text-center">sdjfdj..adfsd</h1>
+      <h2 class="text-center" style="padding-top:4em;">
+        当回忆往事的时候，不会因为虚度年华而悔恨，也不会因为碌碌无为而羞愧！向自己的未来写一封信吧！
+      </h2>
       <p class="text-center mt-4">
-
+        <div class="alert alert-danger" id="nolettershow" role="alert" style="display:none">
+          <span>您还没有为自己的的未来写过信哦，赶紧写一封吧！</span>
+         
+        </div>
         <div class="text-center count_down mt-4 mb-4" style="display:none">
-          jjiasdfds
+          您的信距离到达时间还有:
           <span class="day_num"></span>
           <span class="hour_num"></span>
           <span class="min_num"></span>
           <span class="sec_num"></span>
         </div>
 
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" id="txtAddress" placeholder="Recipient's username" aria-label="Recipient's username"
-            aria-describedby="basic-addon2">
+        <div class="input-group mb-3" style="max-width:768px;margin:0 auto;">
+          <input type="text" class="form-control" id="txtAddress" placeholder="请输入你的钱包地址" aria-label="请输入你的钱包地址" aria-describedby="basic-addon2">
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" id="btnGetWrite" type="button">Button</button>
+            <button class="btn btn-secondary" id="btnGetWrite" type="button">收信</button>
           </div>
         </div>
       </p>
       <p class="text-center mt-4">
-        <button type="button" class="btn btn-secondary btn-lg mt-3" data-toggle="modal" data-target="#modalWrite">Secondary</button>
-        <button type="button" class="btn btn-secondary btn-lg ml-3 mr-3 mt-3">Secondary</button>
-        <button type="button" class="btn btn-secondary btn-lg mt-3">Secondary</button>
+        <button type="button" class="btn btn-secondary btn-lg mt-3" data-toggle="modal" data-target="#modalWrite">开始写信</button>
+        <a class="btn btn-secondary btn-lg ml-3 mr-3 mt-3" href="https://github.com/ChengOrangeJu/WebExtensionWallet" target="_blank">NAS钱包</a>
+        <a class="btn btn-outline-secondary btn-lg mt-3"  href="https://github.com/meeteason/ForFutrue" target="_blank">GITHUB</a>
       </p>
 
     </div>
@@ -47,41 +51,35 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalWriteTitle">Modal title</h5>
+          <h5 class="modal-title" id="modalWriteTitle">开始写信</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <div class="alert alert-danger d-none" role="alert">
-            <span>aaaaaa</span>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+          <div class="alert alert-danger" style="display:none" role="alert">
+            
           </div>
-          <div class="alert alert-success d-none" role="alert">
-            <span>success</span>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+          <div class="alert alert-success"  style="display:none" role="alert">
+            
           </div>
           <div class="form-group">
-            <label for="txtExpire">Email address</label>
-            <input type="text" id="txtExpire" class="form-control" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <label for="txtExpire">到达时间</label>
+            <input type="text" id="txtExpire" class="form-control" placeholder="选择时间">
+            <small id="emailHelp" class="form-text text-muted">信件内容将在您选定时间到达</small>
           </div>
           <div class="form-group">
-            <label for="txtContent">textarea</label>
+            <label for="txtContent">内容</label>
             <textarea class="form-control" id="txtContent" rows="5"></textarea>
           </div>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="coverData">
-            <label class="form-check-label" for="coverData">Check me out</label>
+            <input type="checkbox" class="form-check-input" checked="checked" id="coverData">
+            <label class="form-check-label" for="coverData">覆盖之前写过的信</label>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" id="saveWrite" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+          <button type="button" id="saveWrite" class="btn btn-primary">发送</button>
         </div>
       </div>
     </div>
@@ -91,7 +89,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalFindTitle">Modal title</h5>
+          <h5 class="modal-title" id="modalFindTitle">信件内容</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -100,7 +98,7 @@
           <pre></pre>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
         </div>
       </div>
     </div>
